@@ -1,24 +1,34 @@
-# semicolon-front
+# Semicolon SNS Community
 
-## Project setup
+## 프로젝트 : Semicolon
+    고등학교 친구들이 모엿 SNS를 만든다!? 다들 즐겨주세요!
+### 프로젝트 설정
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+#### 개발을 위한 컴파일 및 재로드
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+#### 정상 동작을 위해 컴파일
 ```
 npm run build
 ```
 
-### Lints and fixes files
+#### 에러 및 파일 수정
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 
+```
+Vue.js Version : 3.0
+```
+
+### 참고자료
+[Configuration Reference](https://cli.vuejs.org/config/)
+
+[Configuration Reference](https://cli.vuejs.org/config/).
+
