@@ -1,118 +1,118 @@
 <template>
   <div class="hello">
-    <h1>
-      세미콜론 커뮤니티에 오신 여러분을 환영합니다!<br>
-    </h1>
-
-    <form @submit.prevent="submitForm">
-      <br>
-      <div>
-        <label for="email" name="email">이메일(Email) </label>
-        <input type="text" id="email" v-model="email"/> @ <input type="text" name="e_domain">
-        &nbsp;
-        <select name="domain" onchange="domainCheck();">
-          <option value = "" selected="selected">직접입력</option>
-          <option value = "naver.com" >naver.com</option>
-          <option value = "kakao.com">kakao.com</option>
-          <option value = "gmail.com">gmail.com</option>
-          <option value = "hanmail.net">hanmail.net</option>
-        </select>
-<!--        <div v-if="!">-->
-<!--          유효하지 않은 이메일 형식 입니다.-->
-<!--        </div>-->
-        <br>
-      </div>
-      <br>
-      <div>
-        <label for="nickname">닉네임(Nickname) </label>
-        <input type="text" id="nickname" v-model="nickname" /> <button type="submit" name="confirmcheckbutton">중복체크 </button>
-      </div>
-      <br>
-      <div>
-        <label for="password" name="emaillb">비밀번호(Password) </label>
-        <input type="password" id="password" v-model="password" />
-      </div>
-      <br>
-      <div>
-        <label for="passwordConfirm" name="emaillb">비밀번호 확인(Password Confirm) </label>
-        <input type="password" id="passwordConfirm" v-model="passwordConfirm" />
-      </div>
-      <br>
-      <br>
-      <button type="submit" name="emaillb" @click="goLoginPage">회원가입 </button>
-    </form>
+    <h1>{{ msg }}</h1>
+    <p>
+      For a guide and recipes on how to configure / customize this project,<br />
+      check out the
+      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
+        >vue-cli documentation</a
+      >.
+    </p>
+    <h3>Installed CLI Plugins</h3>
+    <ul>
+      <li>
+        <a
+          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
+          target="_blank"
+          rel="noopener"
+          >babel</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router"
+          target="_blank"
+          rel="noopener"
+          >router</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex"
+          target="_blank"
+          rel="noopener"
+          >vuex</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
+          target="_blank"
+          rel="noopener"
+          >eslint</a
+        >
+      </li>
+    </ul>
+    <h3>Essential Links</h3>
+    <ul>
+      <li>
+        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
+      </li>
+      <li>
+        <a href="https://forum.vuejs.org" target="_blank" rel="noopener"
+          >Forum</a
+        >
+      </li>
+      <li>
+        <a href="https://chat.vuejs.org" target="_blank" rel="noopener"
+          >Community Chat</a
+        >
+      </li>
+      <li>
+        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener"
+          >Twitter</a
+        >
+      </li>
+      <li>
+        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
+      </li>
+    </ul>
+    <h3>Ecosystem</h3>
+    <ul>
+      <li>
+        <a href="https://router.vuejs.org" target="_blank" rel="noopener"
+          >vue-router</a
+        >
+      </li>
+      <li>
+        <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/vuejs/vue-devtools#vue-devtools"
+          target="_blank"
+          rel="noopener"
+          >vue-devtools</a
+        >
+      </li>
+      <li>
+        <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener"
+          >vue-loader</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/vuejs/awesome-vue"
+          target="_blank"
+          rel="noopener"
+          >awesome-vue</a
+        >
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-// import {validateEmail} from '../utils/validation'
-// export default {
-//   name: 'HelloWorld',
-//   props: {
-//     msg: String
-//   }
-// }
-
 export default {
-  name: 'SignupForm',
-  data() {
-    return {
-      signup: {
-        email: '',
-        nickname: '',
-        password: '',
-        passwordConfirm: ''
-      },
-      login: {
-        email: '',
-        nickname: '',
-        password: ''
-      },
-    };
+  name: "HelloWorld",
+  props: {
+    msg: String,
   },
-  methods: {
-    goLoginPage () {
-      if (this.signup.email == null || this.signup.password == null || this.signup.nickname == null || this.signup.passwordConfirm == null ){
-        alert('모든 항목을 입력해주세요!')
-        return
-      }
-      if (!this.PWValid) {
-        alert('비밀번호 형식에 올바르지 않습니다.')
-        return
-      }
-      if (!this.NicknameValid) {
-        alert('닉네임 형식에 올바르지 않습니다.')
-        return
-      }
-      if (!this.PWconfirmValid) {
-        alert('비밀번호 형식에 올바르지 않습니다.')
-        return
-      }
-      if (this.signup.password === this.signup.passwordConfirm){
-        alert('비밀번호 둘다 일치')
-      }
-  },
-    // emailVaild () {
-    //   if (this.signup.email == )
-    // },
-  computed: {
-    emailValid () {
-      return /^[A-Za-z0-9]+$/.test(this.signup.email)
-    },
-  },
-},
 };
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Mochiy+Pop+P+One&display=swap');
-
-* {
-  align-items: center;
-}
-
 h3 {
   margin: 40px 0 0;
 }
