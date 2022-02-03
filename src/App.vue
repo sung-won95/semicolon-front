@@ -5,7 +5,7 @@
       <router-link to="/register">register</router-link> |
       <router-link to="/MainPage">Main</router-link>
     </div>
-    <router-view />
+    <router-view></router-view>
   </div>
 </template>
 
@@ -31,3 +31,8 @@
   color: #42b983;
 }
 </style>
+
+<script>export default {
+  components: {}
+}
+</script>

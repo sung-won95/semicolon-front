@@ -66,7 +66,7 @@ export default {
         return /^[A-Za-z0-9]+$/.test(this.login.email);
       },
     },
-  }
+  },
 };
 </script>
 
